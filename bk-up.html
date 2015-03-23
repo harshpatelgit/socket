@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Socket Trial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/layout.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/form.css" rel="stylesheet" type="text/css" media="screen">
+        <script src="js/jquery.min.js" type="application/javascript"></script>
+	</head> 
+	<body>
+		<div class="container">
+			<header>
+                <a href="home.html"><img src="media/socket-app-logo.png" alt="socket-logo" /></a>
+                <nav>
+                	<ul>
+                    	<li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="register.html">REGISTER</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav> 
+                    <!-- Nav menu for smaller devices -->
+                    <select id="small-nav">
+                      <option value="home"><a href="home.html">HOME</a></option>
+                      <option value="about"><a href="about.html">ABOUT</a></option>
+                      <option value="register"><a href="register.html">REGISTER</a></option>
+                      <option value="contact"><a href="contact.html">CONTACT</a></option>
+                    </select>
+                    <!--  -->
+			</header>  <!-- end .header -->
+			<div class="content">
+				<form>
+                	<input class="input-box" type="email" placeholder="Email ID" required> <br /> <br />
+                	<input class="input-box" type="password" placeholder="Password" required> <br />
+                    <input id="remember" name="" type="checkbox"> <caption id="caption" style="text-align:left">Remember Me</caption> <br />
+                    <button id="submit">Sign In</button> <br />
+                    <button id="first-time">First Time User!</button> <br />
+                </form> <!-- end .form -->
+                	<img src="media/video-placeholder.jpeg" width="44%" id="video" />
+				<!-- end .content -->
+			</div>
+			<footer>
+				<p>Footer</p>
+			</footer>				<!-- end .footer -->
+			<!-- end .container -->
+		</div>
+	</body>
+</html>

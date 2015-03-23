@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Socket Trial</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/layout.css" rel="stylesheet" type="text/css" media="screen">
+		<link href="css/form.css" rel="stylesheet" type="text/css" media="screen">
+        <script src="js/jquery.min.js" type="application/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="application/javascript"></script>
+        <script src="js/jquery-2.1.3.min" type="application/javascript"></script>
+        <script src="js/jquery.easing.1.3" type="application/javascript"></script>
+        <script>
+        $(document).ready(function(){
+            // STEP 5: Disable CSS interaction (see CSS above)
+            $("div nav").removeClass("slideOut");
+            // STEP 6: Set variable to track state of nav panel
+            var navOpen = false
+            // STEP 7: Build onclick handler, with if/else for open/shut
+            $("div nav > a").on('click', function(event){
+                // STEP 8: Disable default behaviour for hyperlink
+                event.preventDefault(); 
+                if (!navOpen){
+                    // STEP 9: Climb up the DOM and slide open the nav element
+                    $(this).parent().stop().animate({left: -100}, 500, "easeOutBack", function(){
+                        // STEP 10: Callback function to add class to arrow once nav element is done animating
+                        $(this).children().first().addClass("rotated");
+                        // STEP 11: Proceed to CSS above and add class with transform and transition
+                    });              
+                    navOpen = true;
+                } else {
+                    // STEP 12: Do the reverse of STEP 9 and slide shut the nav element
+                    $(this).parent().stop().animate({left: -300}, 500, "easeInBack", function(){
+                        $(this).children().first().removeClass("rotated");
+                    });
+                navOpen = false;
+                };
+            });
+        });
+    </script>
+	</head> 
+	<body>
+		<div class="container">
+			<header>
+                <a href="home.html"><img src="media/socket-app-logo.png" alt="socket-logo" /></a>
+                <nav>
+                	<ul>
+                    	<li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="register.html">REGISTER</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </nav> 
+                    <!-- Nav menu for smaller devices -->
+				<div class="slideOut">
+                    <a href="" title="Navigation Panel">&#10140;</a>
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="register.html">REGISTER</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>                    <!--  -->
+			</header>  <!-- end .header -->
+			<div class="content">
+				<section id="inside-nav">
+                	<a href="#"><button id="prof">PROFILE</button></a>
+                    <a href=""><button id="vehi">VEHICLE</button></a>
+                    <a href=""><button id="char">CHARGE</button></a>
+                    <a href=""><button id="hist">HISTORY</button></a>
+                </section>
+                <figure>
+                	<a href="index.html"><img id="singn-out" src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/logout-512.png" width="50px" alt=""/></a>
+                </figure>
+			</div>
+			<footer>
+				<p>Footer</p>
+			</footer>				<!-- end .footer -->
+			<!-- end .container -->
+		</div>
+	</body>
+</html>
